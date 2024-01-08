@@ -18,8 +18,8 @@ int main(void)
 
 	char array[10] = {acento, a, s, z, llave, arroba, A, Q, Z, corchete};
 	i = 0;
-
-	printf("Se esperan parejas de numeros, si alguno es cero y su pareja no, el programa no funciona.");
+	printf("\n           TEST_FT_ISALPHA\n");
+	printf("Se esperan parejas de numeros, si alguno es cero y su pareja no, el programa no funciona.\n");
 	while(i < 10)
 	{
 		printf("-----%c-----\n", array[i]);
