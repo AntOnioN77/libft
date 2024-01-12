@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antofern <antofern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 17:10:12 by antofern          #+#    #+#             */
-/*   Updated: 2024/01/10 15:46:52 by antofern         ###   ########.fr       */
+/*   Created: 2024/01/12 15:03:04 by antofern          #+#    #+#             */
+/*   Updated: 2024/01/12 16:05:51 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int c)
+#include "libft.h"
+int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	if (c > 31 && c < 127)
-	{
-		return (1);
-	}
-	return (0);
+	int i;
+
+	i = 0;
+	while (s1[i] && s2[i] && s1[1] == s2[i])
+		i++;
+	return ((int)(s1[i] - s2[i]));
 }

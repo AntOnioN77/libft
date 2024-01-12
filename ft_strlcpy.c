@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antofern <antofern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 17:10:12 by antofern          #+#    #+#             */
-/*   Updated: 2024/01/10 15:46:52 by antofern         ###   ########.fr       */
+/*   Created: 2024/01/10 15:44:37 by antofern          #+#    #+#             */
+/*   Updated: 2024/01/11 09:26:02 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int c)
+#include "libft.h"
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	if (c > 31 && c < 127)
+	size_t	i;
+
+	i = 0;
+	while (src[i] && (i < (size - 1)))
 	{
-		return (1);
+		dst[i] = src[i];
+		i++;
 	}
-	return (0);
+	if (size > 0)
+		dst[i] = '\0';
+	return (ft_strlen(src));
 }

@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   test_ft_strlcpy.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antofern <antofern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 17:10:12 by antofern          #+#    #+#             */
-/*   Updated: 2024/01/10 15:46:52 by antofern         ###   ########.fr       */
+/*   Created: 2024/01/10 16:20:10 by antofern          #+#    #+#             */
+/*   Updated: 2024/01/10 17:09:26 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int c)
+
+#include <stdio.h>
+#include <string.h>
+size_t	ft_strlcpy(char *dst, const char *src, size_t size);
+
+int	main()
 {
-	if (c > 31 && c < 127)
-	{
-		return (1);
-	}
-	return (0);
+    char cadena[] ="cadena poyos";
+    
+    ft_strlcpy(&cadena[2],&cadena[10], 3);
+    
+    printf("%s", cadena);
+
+    return 0;
 }
