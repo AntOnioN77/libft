@@ -6,15 +6,15 @@
 /*   By: antofern <antofern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 14:25:23 by antofern          #+#    #+#             */
-/*   Updated: 2024/01/12 14:45:14 by antofern         ###   ########.fr       */
+/*   Updated: 2024/01/14 14:28:28 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s[i] && s[i] != c)
@@ -24,5 +24,5 @@ char *ft_strchr(const char *s, int c)
 	if (s[i] == c)
 		return ((char *)s + i);
 	else
-		return (NULL);	
+		return (NULL);
 }

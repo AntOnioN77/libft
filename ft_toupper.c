@@ -6,11 +6,11 @@
 /*   By: antofern <antofern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 17:47:48 by antofern          #+#    #+#             */
-/*   Updated: 2024/01/12 17:48:03 by antofern         ###   ########.fr       */
+/*   Updated: 2024/01/14 14:38:51 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
 	if (c > 96 && c < 123)
 		c = c - 32;
