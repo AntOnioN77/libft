@@ -1,6 +1,7 @@
 #include "libft.h"
+//#include <stdlib.h>
 
-char * strdup(const char *s1)
+char *ft_strdup(const char *s1)
 {
 	size_t slen;
 	char *new;
