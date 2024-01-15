@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antofern <antofern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/14 23:38:12 by antofern          #+#    #+#             */
-/*   Updated: 2024/01/15 09:31:22 by antofern         ###   ########.fr       */
+/*   Created: 2024/01/15 10:31:32 by antofern          #+#    #+#             */
+/*   Updated: 2024/01/15 10:43:05 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_atoi(const char *nptr)
 {
-	size_t			i;
-	unsigned char	*str1;
-	unsigned char	*str2;
+	int	total;
+	int	sign;
 
-	str1 = (unsigned char *)s1;
-	str2 = (unsigned char *)s2;
-	i = 0;
-	while (i < n && str1[i] == str2[i])
-		i++;
-	return (str1[i] - str2[i]);
+	sign = 1;
+	total = 0;
+	if (*nptr == '-')
+	{
+		sign = sign * (-1);
+		nptr++;
+	}
+	if (*nptr == '+')
+		nptr++;
+	while (*nptr <= '9' && *nptr >= '0')
+	{
+		total = (*nptr - '0') + (total * 10);
+		nptr++;
+	}
+	return (total * sign);
 }
