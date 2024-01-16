@@ -5,7 +5,7 @@ flags = -Wall -Wextra -Werror
 $(target) : $(objects)
 	ar rc $(target) $(objects)
 	ranlib $(target)
-%.o : %.c ft.h
+%.o : %.c libft.h
 	$(CC) $(flags) -o $@ -c $<
 .PHONY : clean fclean all re
 all : $(target)
