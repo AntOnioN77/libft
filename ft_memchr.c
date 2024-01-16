@@ -6,7 +6,7 @@
 /*   By: antofern <antofern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:35:50 by antofern          #+#    #+#             */
-/*   Updated: 2024/01/15 09:32:40 by antofern         ###   ########.fr       */
+/*   Updated: 2024/01/16 10:28:27 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	unsigned char	*memory_section;
 	unsigned char	compar;
 
-	*memory_section = (unsigned char *)s;
+	memory_section = (unsigned char *)s;
 	compar = (unsigned char)c;
 	i = 0;
 	while (i < n)
