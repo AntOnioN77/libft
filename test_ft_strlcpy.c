@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_ft_strlcpy.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antofern <antofern@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: antofern <antofern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 16:20:10 by antofern          #+#    #+#             */
-/*   Updated: 2024/01/10 17:09:26 by antofern         ###   ########.fr       */
+/*   Updated: 2024/01/16 16:51:22 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 
 int	main()
 {
-    char cadena[] ="cadena poyos";
-    
-    ft_strlcpy(&cadena[2],&cadena[10], 3);
+    char cadena[10] ="----------";
+    char cadenab[] = "aaaaa";
+    ft_strlcpy(cadena, cadenab, 0);
     
     printf("%s", cadena);
 
-    return 0;
+    return (0);
 }
