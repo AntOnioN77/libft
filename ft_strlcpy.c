@@ -6,7 +6,7 @@
 /*   By: antofern <antofern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 15:44:37 by antofern          #+#    #+#             */
-/*   Updated: 2024/01/16 17:03:36 by antofern         ###   ########.fr       */
+/*   Updated: 2024/01/16 18:54:58 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		return (ft_strlen(src));
 	while ((i < (dstsize - 1)) && (src[i]))
 	{
-		printf("w %lu", i);
 		dst[i] = src[i];
 		i++;
 	}
