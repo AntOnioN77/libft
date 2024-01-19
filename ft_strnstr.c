@@ -6,7 +6,7 @@
 /*   By: antofern <antofern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 18:26:39 by antofern          #+#    #+#             */
-/*   Updated: 2024/01/15 09:33:08 by antofern         ###   ########.fr       */
+/*   Updated: 2024/01/19 15:09:31 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	{
 		j = i;
 		v = 0;
-		while (haystack[j] == needle[v] && haystack[j] && needle[v])
+		while (haystack[j] == needle[v] && (i + j)< len && haystack[j] && needle[v])
 		{
 			j++;
 			v++;
