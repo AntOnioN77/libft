@@ -13,7 +13,7 @@ int main(void)
 
 	coincidencia = strchr(chain_a, 'w');
 	printf("ft original:%s\n", coincidencia);
-	coincidencia = ft_strchr(chain_c, 'l');
+	coincidencia = ft_strchr(chain_c, 'w');
 	printf("ft testeada:%s\n", coincidencia);
 	return(0);
 }

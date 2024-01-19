@@ -6,7 +6,7 @@
 /*   By: antofern <antofern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 09:29:54 by antofern          #+#    #+#             */
-/*   Updated: 2024/01/16 10:37:43 by antofern         ###   ########.fr       */
+/*   Updated: 2024/01/18 15:55:57 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	startsrc = (char *)src;
 	startdst = dst;
 	remain = size;
-	while (*dst != '\0')
+	while (*dst != '\0' && remain > 0)
 	{
 		dst++;
 		remain--;
@@ -36,7 +36,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	}
 	while (*src)
 		src++;
-	*dst = '\0';
+	if (remain > 0)
+		*dst = '\0';
 	tlenght = tlenght + (src - startsrc);
 	return (tlenght);
 }

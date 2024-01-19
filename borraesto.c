@@ -2,6 +2,11 @@
 
 int main(void)
 {
-    char *cadena = "r";
-    printf("%lu",sizeof(char));
+	int i;
+	int t = 0;
+	while (t-- > 1)
+	{
+		i++;
+	}
+	printf("%d", t);
 }

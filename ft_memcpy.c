@@ -11,12 +11,17 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <assert.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	unsigned char		*destination;
 	const unsigned char	*source;
 
+	if (dest == NULL || src == NULL)
+		return (dest);
 	destination = dest;
 	source = src;
 	while (n-- > 0)
