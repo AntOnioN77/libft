@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antofern <antofern@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: antofern <antofern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 18:26:39 by antofern          #+#    #+#             */
-/*   Updated: 2024/01/19 15:09:31 by antofern         ###   ########.fr       */
+/*   Updated: 2024/01/20 17:26:00 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	i = 0;
 	if (needle[0] == '\0')
 		return ((char *)haystack);
-	while (i < len && (haystack[i]))
+	while (haystack[i])
 	{
 		j = i;
 		v = 0;
-		while (haystack[j] == needle[v] && (i + j)< len && haystack[j] && needle[v])
+		while (haystack[j] == needle[v] && (j + 1) <= len && haystack[j] && needle[v])
 		{
 			j++;
 			v++;

@@ -1,6 +1,8 @@
 //compilar con -lbsd
 
-#include<bsd/string.h> 
+//#include<bsd/string.h> 
+#include <string.h>
+
 #include<stdio.h>
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
@@ -40,9 +42,9 @@ int main(void)
 	chain_k[3] = 'n';
 	chain_k[4] = '\0';
 	//char chain_l[] = "municholo";
-	nreturn = strlcat(chain_i, "lorem ipsum", 10);
+	nreturn = strlcat(chain_i, "lorem ipsum", 16);
 	printf("ft original:%d|%s\n", nreturn, chain_i);
-	nreturn = ft_strlcat(chain_k,  "lorem ipsum", 10);
+	nreturn = ft_strlcat(chain_k,  "lorem ipsum", 16);
 	if (chain_k[9] == '\0' )
 		printf("printNull 9");
 	if (chain_k[10] == '\0' )

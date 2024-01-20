@@ -1,7 +1,7 @@
 //compilar con -lbsd
 
 #include <stdio.h>
-#include <bsd/string.h> 
+#include <string.h> 
 
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
@@ -29,18 +29,19 @@ int main(void)
     //printf("%s -- ",ft_strnstr(s3, s2, 4));
     //printf("%s\n", strnstr(s3, s2, 4));
 
-        char *s1 = "MZIRIBMZIRIBMZE123";
-        char *s2 = "MZIRIBMZE";
-        size_t max = strlen(s2);
-        char *i1 = strnstr(s1, s2, max);
-        char *i2 = ft_strnstr(s1, s2, max);
+        char *s1 = "lorem ipsum dolor sit amet";
+        char *s2 = "ipsum";
+        //size_t max = strlen(s2);
+        char *i1 = strnstr(s1, s2, 11);
+        char *i2 = ft_strnstr(s1, s2, 11);
     if (i1 == NULL)
         printf("orig nuloo\n");
     else
-        printf("original : %s", i1);
+        printf("original : %s\n", i1);
     if (i2 == NULL)
         printf("ft_ nuloo\n");
     else
         printf("ft_ : %s", i2);
+   // printf("--%s--",ft_strnstr("lorem ipsum dolor sit amet", "ipsum", 15));
     return (0);
 }
