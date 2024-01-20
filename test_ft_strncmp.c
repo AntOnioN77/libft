@@ -20,5 +20,7 @@ int main(void)
 
 	printf("(%d--", ft_strncmp(b, d, 1));
 	printf("%d\n)", strncmp(b, d, 1));
+	printf("%d\n)", ft_strncmp("zyxbcdefgh", "abcdwxyz", 0));
+	printf("%d\n)", ft_strncmp("ayxbcdefgh", "abcdwxyz", 1));
 	return (0);
 }
