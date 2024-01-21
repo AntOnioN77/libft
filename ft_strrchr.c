@@ -6,7 +6,7 @@
 /*   By: antofern <antofern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 13:29:51 by antofern          #+#    #+#             */
-/*   Updated: 2024/01/21 21:11:21 by antofern         ###   ########.fr       */
+/*   Updated: 2024/01/21 21:50:43 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ char    *ft_strrchr(const char *s, int c)
 	int	i;
 	int uc;
 
-	uc = (unsigned char)c;
-	i = 0;
 	if (s == NULL)
 		return (NULL);
+	uc = (unsigned char)c;
+	i = 0;
 	while (s[i])
 		i++;
 	while (i >= 0 && s[i] != uc)
