@@ -12,23 +12,23 @@
 
 # include "libft.h"
 
-char    *ft_strrchr(const char *s, int c)
+char    *ft_strrchr(const char *str, int c)
 {
 	int	i;
-	int uc;
+	unsigned char uc;
 
-	if (s == NULL)
+	if (str == NULL)
 		return (NULL);
 	uc = (unsigned char)c;
 	i = 0;
-	while (s[i])
+	while (str[i])
 		i++;
-	while (i >= 0 && s[i] != uc)
+	while (i >= 1 && str[i] != uc)
 	{
 		i--;
 	}
-	if (s[i] == uc)
-		return ((char *)s + i);
+	if (str[i] == uc)
+		return ((char *)&str[i]);
 	else
 		return (NULL);
 }
