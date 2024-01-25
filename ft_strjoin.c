@@ -23,7 +23,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	newstr = (char *)malloc(sizeof(char) * (s1size + s2size + 1));
 	if (newstr == NULL)
 		return (NULL);
-	ft_memcpy(newstr, s1, s1size);//cambiarlo a ft_strcpy() cuando termines de hacer la gracia
-	ft_memcpy(&newstr[s1size], s2, s2size);//cambiarlo a ft_strcpy() cuando termines de hacer la gracia
+	ft_strlcpy(newstr, s1, s1size + 1);
+	ft_strlcpy(&newstr[s1size], s2, s2size + 1);	
 	return (newstr);
 }
