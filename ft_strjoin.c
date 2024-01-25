@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antofern <antofern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/12 14:25:23 by antofern          #+#    #+#             */
-/*   Updated: 2024/01/25 00:16:20 by antofern         ###   ########.fr       */
+/*   Created: 2024/01/25 11:04:44 by antofern          #+#    #+#             */
+/*   Updated: 2024/01/25 11:49:17 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	i;
-	unsigned char uc;
+	char	*newstr;
+	size_t	s1size;
+	size_t	s2size;
 
-	uc = (unsigned char)c;
-	i = 0;
-	while (s[i] && (unsigned char)s[i] != uc)
-	{
-		i++;
-	}
-	if (s[i] == uc)
-		return ((char *)&s[i]);
-	else
+	s1size = ft_strlen(s1);
+	s2size = ft_strlen(s2);
+	newstr = (char *)malloc(sizeof(char) * (s1size + s2size + 1));
+	if (newstr == NULL)
 		return (NULL);
+	ft_memcpy(newstr, s1, s1size);//cambiarlo a ft_strcpy() cuando termines de hacer la gracia
+	ft_memcpy(&newstr[s1size], s2, s2size);//cambiarlo a ft_strcpy() cuando termines de hacer la gracia
+	return (newstr);
 }
