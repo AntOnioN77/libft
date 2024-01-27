@@ -6,7 +6,7 @@
 /*   By: antofern <antofern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 13:29:51 by antofern          #+#    #+#             */
-/*   Updated: 2024/01/25 00:42:59 by antofern         ###   ########.fr       */
+/*   Updated: 2024/01/27 02:00:24 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ char	*ft_strrchr(const char *str, int c)
 {
 	int				i;
 
-	if (str == NULL)
-		return (NULL);
 	i = 0;
 	while (str[i])
 		i++;

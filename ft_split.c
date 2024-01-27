@@ -6,7 +6,7 @@
 /*   By: antofern <antofern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 22:41:16 by antofern          #+#    #+#             */
-/*   Updated: 2024/01/25 23:40:20 by antofern         ###   ########.fr       */
+/*   Updated: 2024/01/27 13:47:09 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,25 +36,27 @@ static char	*ft_strndup(const char *src, int n)
 	return (new_string);
 }
 
-/*ft_count_substr() retorna el numero de substrings, eludiendo substrings vacias.*/
-static int	ft_count_substr(const char *str, char c)
+/*ft_count_substr() retorna el numero de substrings, eludiendo substrings vacias*/
+static int	ft_count_substr(const char *str, char token)
 {
-	int	i;
+	int	count;
+	int check;
 
-	i = 0;
+	count = 0;
+
 	while (*str != '\0')
 	{
-		while (c == *str && *str != '\0')
-		{
+		check = 0;
+		if (*str != token)
+			check = 1;
+		while (*str != token && *str != '\0')
 			str++;
-		}
-		while (c != *str && *str != '\0')
-		{
+		while (*str == token && *str != '\0')
 			str++;
-		}
-		i++;
+		if (check == 1)
+			count++;
 	}
-	return (i);
+	return (count);
 }
 
 static int	ft_to_chop(char **array_substrings, int substring_count,
@@ -78,7 +80,9 @@ char const *s, char c)
 		if (array_substrings[i] == NULL)
 		{
 			while (i >= 0)
-				free(array_substrings[i]);
+			{
+				free(array_substrings[i--]);
+			}
 			return (1);
 		}
 		s = next_str;

@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   test_ft_memmove.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antofern <antofern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/17 11:36:14 by antofern          #+#    #+#             */
-/*   Updated: 2024/01/26 17:49:32 by antofern         ###   ########.fr       */
+/*   Created: 2024/01/09 20:43:41 by antofern          #+#    #+#             */
+/*   Updated: 2024/01/09 22:20:19 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdlib.h>
+#include <stdio.h>
 
-char	*ft_strdup(const char *s1)
+void	*ft_memmove(void *dest, const void *src, size_t n);
+
+int	main(void)
 {
-	size_t	slen;
-	char	*new;
-	int		i;
-
-	i = 0;
-	slen = ft_strlen(s1) + 1;
-	new = (char *)malloc(sizeof(char) * slen);
-	if (new == NULL)
+	char string[6] = " Mundo";
+	ft_memmove(&(string[2]), &(string[1]), 4);
+	//ft_memmove(&(string[1]), &(string[2]), 4);
+	printf("%s\n", string);
+	if (!(string[6] == '\0'))
 	{
-		return NULL;
+		printf("ERROR string no termina en valor nulo\n");
 	}
-	while (s1[i])
-	{
-		new[i] = s1[i];
-		i++;
-	}
-	new[i] = '\0';
-	return (new);
 }
