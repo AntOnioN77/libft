@@ -6,7 +6,7 @@
 /*   By: antofern <antofern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 22:41:16 by antofern          #+#    #+#             */
-/*   Updated: 2024/01/27 13:47:09 by antofern         ###   ########.fr       */
+/*   Updated: 2024/01/27 18:24:49 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,17 @@
 #include <stdio.h>
 #include "libft.h"
 
-static char	*ft_strndup(const char *src, int n)
+static char	*ft_strndup(const char *src, int length)
 {
 	char	*new_string;
-	int		length;
+	//int		length;
 	int		i;
 
-	length = ft_strlen(src);
 	new_string = (char *)malloc((length + 1) * sizeof(char));
 	if (new_string == NULL)
 		return (NULL);
 	i = 0;
-	while (i <= length && i < n)
+	while (i < length)
 	{
 		new_string[i] = src[i];
 		i++;
@@ -37,7 +36,7 @@ static char	*ft_strndup(const char *src, int n)
 }
 
 /*ft_count_substr() retorna el numero de substrings, eludiendo substrings vacias*/
-static int	ft_count_substr(const char *str, char token)
+static int	ft_count_substr(const char *str, char tkn)
 {
 	int	count;
 	int check;
@@ -47,11 +46,11 @@ static int	ft_count_substr(const char *str, char token)
 	while (*str != '\0')
 	{
 		check = 0;
-		if (*str != token)
+		if (*str != tkn)
 			check = 1;
-		while (*str != token && *str != '\0')
+		while (*str != tkn && *str != '\0')
 			str++;
-		while (*str == token && *str != '\0')
+		while (*str == tkn && *str != '\0')
 			str++;
 		if (check == 1)
 			count++;
@@ -60,23 +59,23 @@ static int	ft_count_substr(const char *str, char token)
 }
 
 static int	ft_to_chop(char **array_substrings, int substring_count,
-char const *s, char c)
+char const *src_str, char tkn)
 {
 	int		i;
 	char	*next_str;
 
 	i = -1;
-	next_str = (char *)s;
+	next_str = (char *)src_str;
 	while (++i < substring_count)
 	{
-		while (c == *s)
+		while ( *src_str != '\0' && *src_str == tkn)
 		{
-			s++;
+			src_str++;
 			next_str++;
 		}
-		while (*next_str != '\0' && c != *next_str)
+		while (*next_str != '\0' && *next_str != tkn)
 			next_str++;
-		array_substrings[i] = ft_strndup(s, next_str - s);
+		array_substrings[i] = ft_strndup(src_str, (next_str - src_str));
 		if (array_substrings[i] == NULL)
 		{
 			while (i >= 0)
@@ -85,8 +84,9 @@ char const *s, char c)
 			}
 			return (1);
 		}
-		s = next_str;
+		src_str = next_str;
 	}
+	//array_substrings[i] = NULL;
 	return (0);
 }
 
@@ -103,6 +103,7 @@ char	**ft_split(char const *s, char c)
 	if (ft_to_chop(array_substrings, substring_count, s, c) == 1)
 	{
 		free(array_substrings);
+		return (NULL);
 	}
 	return (array_substrings);
 }
