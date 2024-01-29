@@ -6,11 +6,10 @@
 /*   By: antofern <antofern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 22:41:16 by antofern          #+#    #+#             */
-/*   Updated: 2024/01/27 18:24:49 by antofern         ###   ########.fr       */
+/*   Updated: 2024/01/27 19:45:53 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//verificar includes innecesarios
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -19,7 +18,6 @@
 static char	*ft_strndup(const char *src, int length)
 {
 	char	*new_string;
-	//int		length;
 	int		i;
 
 	new_string = (char *)malloc((length + 1) * sizeof(char));
@@ -42,7 +40,6 @@ static int	ft_count_substr(const char *str, char tkn)
 	int check;
 
 	count = 0;
-
 	while (*str != '\0')
 	{
 		check = 0;
@@ -68,7 +65,7 @@ char const *src_str, char tkn)
 	next_str = (char *)src_str;
 	while (++i < substring_count)
 	{
-		while ( *src_str != '\0' && *src_str == tkn)
+		while (*src_str != '\0' && *src_str == tkn)
 		{
 			src_str++;
 			next_str++;
@@ -79,14 +76,11 @@ char const *src_str, char tkn)
 		if (array_substrings[i] == NULL)
 		{
 			while (i >= 0)
-			{
 				free(array_substrings[i--]);
-			}
 			return (1);
 		}
 		src_str = next_str;
 	}
-	//array_substrings[i] = NULL;
 	return (0);
 }
 
