@@ -6,12 +6,11 @@
 /*   By: antofern <antofern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 11:36:14 by antofern          #+#    #+#             */
-/*   Updated: 2024/01/26 17:49:32 by antofern         ###   ########.fr       */
+/*   Updated: 2024/01/31 10:30:53 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdlib.h>
 
 char	*ft_strdup(const char *s1)
 {
@@ -24,7 +23,7 @@ char	*ft_strdup(const char *s1)
 	new = (char *)malloc(sizeof(char) * slen);
 	if (new == NULL)
 	{
-		return NULL;
+		return (NULL);
 	}
 	while (s1[i])
 	{

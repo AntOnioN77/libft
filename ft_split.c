@@ -6,7 +6,7 @@
 /*   By: antofern <antofern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 22:41:16 by antofern          #+#    #+#             */
-/*   Updated: 2024/01/27 19:45:53 by antofern         ###   ########.fr       */
+/*   Updated: 2024/01/31 10:41:12 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,12 @@ static char	*ft_strndup(const char *src, int length)
 	return (new_string);
 }
 
-/*ft_count_substr() retorna el numero de substrings, eludiendo substrings vacias*/
+/*ft_count_substr() retorna el numero de substrings,
+eludiendo substrings vacias*/
 static int	ft_count_substr(const char *str, char tkn)
 {
 	int	count;
-	int check;
+	int	check;
 
 	count = 0;
 	while (*str != '\0')

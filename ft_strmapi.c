@@ -6,7 +6,7 @@
 /*   By: antofern <antofern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 17:22:39 by antofern          #+#    #+#             */
-/*   Updated: 2024/01/30 17:24:00 by antofern         ###   ########.fr       */
+/*   Updated: 2024/01/31 10:33:13 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	i = 0;
 	while (s[i])
 	{
-		result[i] = f(i,s[i]);
+		result[i] = f(i, s[i]);
 		i++;
 	}
 	result[i] = '\0';

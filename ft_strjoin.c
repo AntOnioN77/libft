@@ -6,7 +6,7 @@
 /*   By: antofern <antofern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 11:04:44 by antofern          #+#    #+#             */
-/*   Updated: 2024/01/25 11:49:17 by antofern         ###   ########.fr       */
+/*   Updated: 2024/01/31 10:31:30 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (newstr == NULL)
 		return (NULL);
 	ft_strlcpy(newstr, s1, s1size + 1);
-	ft_strlcpy(&newstr[s1size], s2, s2size + 1);	
+	ft_strlcpy(&newstr[s1size], s2, s2size + 1);
 	return (newstr);
 }
