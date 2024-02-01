@@ -6,7 +6,7 @@
 /*   By: antofern <antofern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 14:56:42 by antofern          #+#    #+#             */
-/*   Updated: 2024/01/31 10:34:16 by antofern         ###   ########.fr       */
+/*   Updated: 2024/02/01 23:47:45 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (ft_strdup(""));
 	if (len > (slen - start))
 		len = slen - start;
-	i = 0;
-	buff = (char *)malloc(sizeof(char) * len + 1);
+	buff = (char *)malloc(sizeof(char) * (len + 1));
 	if (buff == NULL)
 	{
 		return (NULL);
 	}
-	while (slen > (start + i) && i < len)
+	i = 0;
+	while (s[start + i] && i < len)
 	{
 		buff[i] = s[start + i];
 		i++;
