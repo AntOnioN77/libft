@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antofern <antofern@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: antofern <antofern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 22:41:16 by antofern          #+#    #+#             */
-/*   Updated: 2024/01/31 10:41:12 by antofern         ###   ########.fr       */
+/*   Updated: 2024/02/03 21:15:10 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,6 @@ static char	*ft_strndup(const char *src, int length)
 	return (new_string);
 }
 
-/*ft_count_substr() retorna el numero de substrings,
-eludiendo substrings vacias*/
 static int	ft_count_substr(const char *str, char tkn)
 {
 	int	count;
