@@ -12,6 +12,9 @@ int main()
 {
 	char str[] = "esta funcion deberia hacer mayusculas las posiciones impares (la primera posicion es cero)";
 	char *strresult;
+/*	strresult = ft_strmapi(str, NULL);
+	if (strresult == NULL)
+		printf("maneja un NULL en el lugar de f");*/
 	strresult = ft_strmapi(str, uperoddstr);
 	printf("%s\n", strresult);
 	return (0);

@@ -12,12 +12,15 @@
 
 #include "libft.h"
 
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	start;
 	size_t	len;
 	char	*result;
 
+	if (!s1)
+		return (NULL);
 	start = 0;
 	while (s1[start] && ft_strchr(set, s1[start]) != NULL)
 		start++;

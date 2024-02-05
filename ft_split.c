@@ -88,6 +88,8 @@ char	**ft_split(char const *s, char c)
 	int		substring_count;
 	char	**array_substrings;
 
+	if (!s)
+		return (NULL);
 	substring_count = ft_count_substr(s, c);
 	array_substrings = (char **)malloc((substring_count + 1) * sizeof(char *));
 	if (array_substrings == NULL)
