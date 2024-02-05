@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antofern <antofern@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antofern <antofern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 18:26:39 by antofern          #+#    #+#             */
-/*   Updated: 2024/02/04 00:07:26 by antofern         ###   ########.fr       */
+/*   Updated: 2024/02/05 09:53:18 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t	j;
 	size_t	v;
 
-if (len == 0 && (!needle || !haystack))
-	return (NULL);
+	if (len == 0 && (!needle || !haystack))
+		return (NULL);
 	i = 0;
 	if (needle[0] == '\0')
 		return ((char *)haystack);
@@ -40,6 +40,7 @@ if (len == 0 && (!needle || !haystack))
 	return (NULL);
 }
 
+/*
 #include <string.h>
 #include <stdio.h>
 
@@ -52,3 +53,4 @@ int	main(void)
 	printf("%s", result);
 	return (0);
 }
+*/
