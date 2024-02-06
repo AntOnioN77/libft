@@ -17,10 +17,11 @@ void	*ft_calloc(size_t count, size_t size)
 	size_t	total_size;
 	void	*pnt;
 
+	if(count > 0 && size > (SIZE_MAX/count + 1))
+		return(NULL);
 	total_size = count * size;
 	pnt = malloc(total_size);
-	if (pnt == NULL)
-		return (NULL);
-	ft_bzero(pnt, total_size);
+	if (pnt)
+		ft_bzero(pnt, total_size);
 	return (pnt);
 }

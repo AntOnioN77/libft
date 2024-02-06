@@ -11,8 +11,8 @@ flags = -Wall -Wextra -Werror
 $(NAME) : $(objects)
 	ar rc $(NAME) $(objects)
 	ranlib $(NAME)
-%.o : %.c libft.h
-	$(CC) $(flags) -o $@ -c $<
+#%.o : %.c libft.h
+#	$(CC) $(flags) -o $@ -c $<
 .PHONY : clean fclean all re
 all : $(NAME)
 clean :
