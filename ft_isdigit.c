@@ -6,7 +6,7 @@
 /*   By: antofern <antofern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 12:59:19 by antofern          #+#    #+#             */
-/*   Updated: 2024/01/09 14:19:22 by antofern         ###   ########.fr       */
+/*   Updated: 2024/02/07 15:42:13 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@ int	ft_isdigit(int c)
 {
 	if (c > '/' && c < ':')
 	{
-		return (2048);
+		return (1);
 	}
 	return (0);
 }

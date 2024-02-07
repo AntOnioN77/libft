@@ -6,7 +6,7 @@
 /*   By: antofern <antofern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 12:59:01 by antofern          #+#    #+#             */
-/*   Updated: 2024/01/09 14:19:03 by antofern         ###   ########.fr       */
+/*   Updated: 2024/02/07 15:42:00 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@ int	ft_isalpha(int c)
 {
 	if ((c > 64 && c < 91) || (c > 96 && c < 123))
 	{
-		return (1024);
+		return (1);
 	}
 	return (0);
 }

@@ -6,13 +6,13 @@
 /*   By: antofern <antofern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 12:59:11 by antofern          #+#    #+#             */
-/*   Updated: 2024/01/09 14:20:05 by antofern         ###   ########.fr       */
+/*   Updated: 2024/02/07 15:39:37 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isascii(int c)
 {
-	if ((c > (-1)) && c < 128)
+	if ((c >= 0) && c < 128)
 	{
 		return (1);
 	}

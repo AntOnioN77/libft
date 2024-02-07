@@ -13,8 +13,7 @@ int main()
 //	unsigned long maxUlong = ULONG_MAX;
 //	unsigned long maxInt = INT_MAX;
 //	printf("maxUlong: %lu\n", maxUlong);
-//	printf("maxInt: %lu\n", maxInt)
-;
+//	printf("maxInt: %lu\n", maxInt);
 
 	void *pnt;
 
@@ -30,7 +29,7 @@ int main()
 //	pnt = malloc(INT_MAX + 1);//excede el maximo soportado
 //	pnt = malloc((unsigned long)INT_MAX + 1);//funca
 
-	pnt = calloc(INT_MAX, INT_MAX);//excede
+//	pnt = calloc(INT_MAX, INT_MAX);//excede
 
 
 	free(pnt);
