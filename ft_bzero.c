@@ -16,11 +16,12 @@ void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*uc;
 
-	uc = s;
-	while (n-- > 0)
+	uc = (unsigned char *)s;
+	while (n > 0)
 	{
 		*uc = 0;
 		uc++;
+		n--;
 	}
 	return ;
 }
