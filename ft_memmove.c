@@ -6,7 +6,7 @@
 /*   By: antofern <antofern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 19:14:01 by antofern          #+#    #+#             */
-/*   Updated: 2024/01/31 10:27:18 by antofern         ###   ########.fr       */
+/*   Updated: 2024/02/08 16:54:48 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 static void	memcpy_backwards(void *dest, const void *src, size_t n)
 {
 	int					i;
-	unsigned char		*destination;
+	unsigned char		*back_dest;
 	const unsigned char	*source;
 
 	i = 1;
 	source = src;
-	destination = dest + (n - 1);
-	while (destination >= (unsigned char *)dest)
+	back_dest = dest + (n - 1);
+	while (back_dest >= (unsigned char *)dest)
 	{
-		*destination = source[n - i];
-		destination--;
+		*back_dest = source[n - i];
+		back_dest--;
 		i++;
 	}
 }
