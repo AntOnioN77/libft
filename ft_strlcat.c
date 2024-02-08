@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antofern <antofern@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antofern <antofern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 10:40:23 by antofern          #+#    #+#             */
-/*   Updated: 2024/02/03 22:27:31 by antofern         ###   ########.fr       */
+/*   Updated: 2024/02/08 17:50:33 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,24 +35,24 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	return (i + j);
 }
 
-/*cd
+/*
 #include <stdio.h>
-#include <string.h>
+#include <bsd/string.h>
 int main(void)
 {
-	char dest[14];
+	//char dest[14];
 	char *src;
-	int i;
+	//int i;
 	
-	i = 0;
-	while(i < 3)
-		{
-			dest[i] = 'a';
-			i++;
-		}
-	dest[i] = '\0';
+	//i = 0;
+	//while(i < 3)
+	//	{
+	//		dest[i] = 'a';
+	//		i++;
+	//	}
+	//dest[i] = '\0';
 	src = "hola mundo";
-	ft_strlcat(NULL, src, 0);
+	strlcat(src, NULL, 0);
 	//printf("%s", dest);
 }
 */
