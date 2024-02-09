@@ -8,7 +8,7 @@ ft_itoa.c ft_putnbr_fd.c ft_putendl_fd.c ft_putchar_fd.c ft_putstr_fd.c ft_strma
 ft_striteri.c ft_strtrim.c
 OBJECTS =$(subst .c,.o,$(SOURCES))
 FLAGS = -Wall -Wextra -Werror
-$(NAME) : $(OBJECTS)
+$(NAME): $(OBJECTS)
 	ar rc $(NAME) $(OBJECTS)
 	ranlib $(NAME)
 ft_atoi.o: ft_atoi.c libft.h
@@ -79,10 +79,10 @@ ft_striteri.o: ft_striteri.c libft.h
 	$(CC) $(FLAGS) -c $< -o $@
 ft_strtrim.o: ft_strtrim.c libft.h
 	$(CC) $(FLAGS) -c $< -o $@
-.PHONY : clean fclean all re
-all : $(NAME)
-clean :
+.PHONY: clean fclean all re
+all: $(NAME)
+clean:
 	rm -f $(OBJECTS)
-fclean : clean
+fclean: clean
 	rm -f $(NAME)
-re : fclean all
+re: fclean all
