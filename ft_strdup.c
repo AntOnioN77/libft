@@ -6,7 +6,7 @@
 /*   By: antofern <antofern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 11:36:14 by antofern          #+#    #+#             */
-/*   Updated: 2024/02/09 00:24:06 by antofern         ###   ########.fr       */
+/*   Updated: 2024/02/09 11:16:35 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@ char	*ft_strdup(const char *s1)
 	slen = ft_strlen(s1) + 1;
 	new = (char *)ft_calloc(slen, sizeof(char));
 	if (new == NULL)
-	{
 		return (NULL);
-	}
 	while (s1[i])
 	{
 		new[i] = s1[i];
