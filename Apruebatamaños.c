@@ -1,5 +1,5 @@
-#include <limits.h>
-#include <stdint.h>
+#include <limits.h>//contiene INT_MAX
+#include <stdint.h> //paradojicamente contiene SIZE_MAX
 #include "libft.h"
 #include "stdio.h"
 
