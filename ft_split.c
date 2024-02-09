@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antofern <antofern@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antofern <antofern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 22:41:16 by antofern          #+#    #+#             */
-/*   Updated: 2024/02/03 21:15:10 by antofern         ###   ########.fr       */
+/*   Updated: 2024/02/09 10:48:14 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,12 +64,12 @@ char const *src_str, char tkn)
 	next_str = (char *)src_str;
 	while (++i < substring_count)
 	{
-		while (*src_str != '\0' && *src_str == tkn)
+		while (*src_str == tkn && *src_str != '\0')
 		{
 			src_str++;
 			next_str++;
 		}
-		while (*next_str != '\0' && *next_str != tkn)
+		while (*next_str != tkn && *next_str != '\0')
 			next_str++;
 		array_substrings[i] = ft_strndup(src_str, (next_str - src_str));
 		if (array_substrings[i] == NULL)
