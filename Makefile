@@ -5,7 +5,7 @@ ft_isascii.c ft_isdigit.c ft_isprint.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_me
 ft_memset.c ft_strchr.c ft_strrchr.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strncmp.c\
 ft_strnstr.c ft_strdup.c ft_tolower.c ft_toupper.c ft_substr.c ft_strjoin.c ft_split.c\
 ft_itoa.c ft_putnbr_fd.c ft_putendl_fd.c ft_putchar_fd.c ft_putstr_fd.c ft_strmapi.c\
-ft_striteri.c ft_strtrim.c
+ft_striteri.c ft_strtrim.c ft_putnbr_base.c ft_putunbr_base.c
 OBJECTS =$(subst .c,.o,$(SOURCES))
 FLAGS = -Wall -Wextra -Werror
 $(NAME): $(OBJECTS)
@@ -78,6 +78,10 @@ ft_strmapi.o: ft_strmapi.c libft.h
 ft_striteri.o: ft_striteri.c libft.h
 	$(CC) $(FLAGS) -c $< -o $@
 ft_strtrim.o: ft_strtrim.c libft.h
+	$(CC) $(FLAGS) -c $< -o $@
+ft_putnbr_base.o: ft_putnbr_base.c libft.h
+	$(CC) $(FLAGS) -c $< -o $@
+ft_putunbr_base.o: ft_putunbr_base.c libft.h
 	$(CC) $(FLAGS) -c $< -o $@
 .PHONY: clean fclean all re
 all: $(NAME)
