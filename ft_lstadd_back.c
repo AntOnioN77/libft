@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antofern <antofern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 14:34:31 by antofern          #+#    #+#             */
-/*   Updated: 2024/07/28 10:23:25 by antofern         ###   ########.fr       */
+/*   Created: 2024/07/28 13:59:34 by antofern          #+#    #+#             */
+/*   Updated: 2024/07/28 19:51:32 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	size_t	start;
-	size_t	len;
-	char	*result;
+	t_list	*current;
 
-	if (!s1)
-		return (NULL);
-	start = 0;
-	while (s1[start] && ft_strchr(set, s1[start]) != NULL)
-		start++;
-	len = start;
-	while (s1[len] != '\0')
-		len++;
-	if (start < len)
-		len--;
-	while (len > 0 && (ft_strchr(set, s1[len]) != NULL))
-		len--;
-	len = (len + 1) - start;
-	result = ft_substr(s1, start, len);
-	return (result);
+	if (new == NULL)
+		return ;
+	if (*lst == NULL)
+	{
+		*lst = new;
+		return ;
+	}
+	current = *lst;
+	while (current->next != NULL)
+	{
+		current = current->next;
+	}
+	current->next = new;
+	new->next = NULL;
 }

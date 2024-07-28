@@ -1,4 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putunbr_base.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: antofern <antofern@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/06 12:05:55 by antofern          #+#    #+#             */
+/*   Updated: 2024/07/28 10:22:10 by antofern         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "libft.h"
 #include <unistd.h>
 #include <limits.h>
 
@@ -26,16 +38,22 @@ static int	ft_is_base_ko(char *base)
 	return (0);
 }
 
-static void	ft_imprime(char *base, int *buf_reminds, int nlength)
+int	ft_imprime(char *base, int *buf_reminds, int nlength)
 {
 	int	r;
+	int	err;
+	int	nlen_aux;
 
+	nlen_aux = nlength;
 	while (nlength >= 0)
 	{
 		r = buf_reminds[nlength];
-		write(1, &base[r], 1);
+		err = write(1, &base[r], 1);
+		if (err == -1)
+			return (-1);
 		nlength--;
 	}
+	return (nlen_aux + 1);
 }
 
 static int	distribute(int *reminds, long unsigned int *unbr,
@@ -54,18 +72,23 @@ unsigned int len_base)
 	return (ndigits);
 }
 
-void	ft_putunbr_base(long unsigned int nbr, char *base)
+int	ft_putunbr_base(long unsigned int nbr, char *base)
 {
 	unsigned int	len_base;
 	int				buf_reminds[32];
 	int				nlength;
+	int				total_len;
 
 	len_base = 0;
 	while (base[len_base])
 		len_base++;
 	if (ft_is_base_ko(base) == 1)
-		return ;
+		return (-1);
 	nlength = distribute(buf_reminds, &nbr, len_base);
-	write(1, &base[nbr], 1);
-	ft_imprime(base, buf_reminds, nlength);
+	if (write(1, &base[nbr], 1) == -1)
+		return (-1);
+	total_len = ft_imprime(base, buf_reminds, nlength);
+	if (total_len == -1)
+		return (-1);
+	return (1 + total_len);
 }

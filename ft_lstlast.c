@@ -1,36 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antofern <antofern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 14:34:31 by antofern          #+#    #+#             */
-/*   Updated: 2024/07/28 10:23:25 by antofern         ###   ########.fr       */
+/*   Created: 2024/07/28 13:54:18 by antofern          #+#    #+#             */
+/*   Updated: 2024/07/28 15:34:45 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+t_list	*ft_lstlast(t_list *lst)
 {
-	size_t	start;
-	size_t	len;
-	char	*result;
+	t_list	*current;
 
-	if (!s1)
+	if (lst == NULL)
 		return (NULL);
-	start = 0;
-	while (s1[start] && ft_strchr(set, s1[start]) != NULL)
-		start++;
-	len = start;
-	while (s1[len] != '\0')
-		len++;
-	if (start < len)
-		len--;
-	while (len > 0 && (ft_strchr(set, s1[len]) != NULL))
-		len--;
-	len = (len + 1) - start;
-	result = ft_substr(s1, start, len);
-	return (result);
+	current = lst;
+	while (current->next != NULL)
+	{
+		current = current->next;
+	}
+	return (current);
 }
