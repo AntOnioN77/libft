@@ -6,31 +6,50 @@ int ft_lstsize(t_list *lst);
  
  *;
 */
+
 #include "libft.h"
+#include <stdio.h>
 
 void char_free(void * pnt)
 {
-	free(pnt);
+    free(pnt);
 }
 
 int main(void)
 {
-	t_list	*start;
-	t_list	*l;
-	t_list	*l_b;
-	char	*pnt_a;
-	char	*pnt_b;
+    t_list	*start;
+    t_list	*new_node;
+    char	*values = "abcdefgh";
+    char	*pnt;
+    int		i;
 
-	pnt_a = (char *)malloc(sizeof(char));
-	pnt_b = (char *)malloc(sizeof(char));
-	*pnt_a = 'a';
-	*pnt_b = 'b';
+    start = NULL;
 
-	l = ft_lstnew(pnt_a);
-	start = NULL;
-	ft_lstadd_front(&start, l);
-	l_b = ft_lstnew(pnt_b);
+    for (i = 0; i < 8; i++)
+    {
+        pnt = (char *)malloc(sizeof(char));
+        *pnt = values[i];
+        new_node = ft_lstnew(pnt);
+        ft_lstadd_back(&start, new_node);
+    }
 
-	ft_lstadd_front(start, l_b);
+    // Verificaciones
+    t_list *current = start;
+    for (i = 7; i >= 0; i--)
+    {
+        if (*(char *)(current->content) != values[7 - i])
+        {
+            printf("Error en las funciones lst*.\n");
+            ft_lstclear(&start, char_free);
+            return 1;
+        }
+		printf("\n----%c---\n", *((char *)current->content));
+        current = current->next;
+    }
+	printf("\n----%c---\n", *((char *)start->next->next->next->content));
+    printf("Las funciones lst* funcionan correctamente.\n");
 
+    // Liberar memoria
+    ft_lstclear(&start, char_free);
+    return 0;
 }
