@@ -1,8 +1,0 @@
-ANTES DE ENTREGAR!!!
-
-eliminiar:
-1-posibles archivos ocultos
-2-ft_putnbr_base.c ---- no es libft
-3-ft_putunbr_base.c ---- no es libft
-4-Regla del makefile so:
-5-Flag -g del makefile

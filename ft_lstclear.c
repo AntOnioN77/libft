@@ -6,7 +6,7 @@
 /*   By: antofern <antofern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 12:01:05 by antofern          #+#    #+#             */
-/*   Updated: 2024/07/29 13:41:17 by antofern         ###   ########.fr       */
+/*   Updated: 2024/07/30 10:26:27 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	if (lst == NULL || *lst == NULL || del == NULL)
-		return;
-	if((*lst)->next != NULL)
+		return ;
+	if ((*lst)->next != NULL)
 	{
 		ft_lstclear(&(*lst)->next, del);
 	}

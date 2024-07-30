@@ -6,7 +6,7 @@
 /*   By: antofern <antofern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 14:03:36 by antofern          #+#    #+#             */
-/*   Updated: 2024/07/30 00:21:52 by antofern         ###   ########.fr       */
+/*   Updated: 2024/07/30 10:36:14 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	lst = lst->next;
 	while (lst != NULL)
 	{
-		if (lst->content == NULL)
-		{
-			ft_lstclear(&new, del);
-			return (NULL);
-		}
 		new_content = (*f)(lst->content);
 		current->next = ft_lstnew(new_content);
 		if (current->next == NULL)
