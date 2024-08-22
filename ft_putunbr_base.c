@@ -3,13 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putunbr_base.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antofern <antofern@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antofern <antofern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 12:05:55 by antofern          #+#    #+#             */
-/*   Updated: 2024/07/28 10:22:10 by antofern         ###   ########.fr       */
+/*   Updated: 2024/08/22 11:48:47 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*______________________IMPORTANT NOTICE!!!____________________________________
+-This function is only tested to work in a certain context*/
 #include "libft.h"
 #include <unistd.h>
 #include <limits.h>

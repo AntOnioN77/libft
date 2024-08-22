@@ -3,13 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atod.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antofern <antofern@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antofern <antofern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 14:24:02 by antofern          #+#    #+#             */
-/*   Updated: 2024/08/10 18:02:59 by antofern         ###   ########.fr       */
+/*   Updated: 2024/08/22 10:39:12 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*______________________IMPORTANT NOTICE!!!____________________________________
+-This function is only tested to work in a certain context,
+may not be valid for a certain range of values ​​or decimals.
+-Does not process exponents or scientific notation*/
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -34,7 +38,6 @@ static double	atod_int(const char *nptr, int *j)
 	return (result);
 }
 
-/*No maneja exponentes*/
 double	ft_atod(const char *nptr)
 {
 	double	result;
