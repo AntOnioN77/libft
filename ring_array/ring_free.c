@@ -6,11 +6,11 @@
 /*   By: antofern <antofern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 12:23:56 by antofern          #+#    #+#             */
-/*   Updated: 2024/08/26 12:24:37 by antofern         ###   ########.fr       */
+/*   Updated: 2024/08/27 09:43:00 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ring.h"
+#include "../headers/ring.h"
 
 void	ring_free(t_ring *ring)
 {

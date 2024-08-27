@@ -6,11 +6,11 @@
 /*   By: antofern <antofern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 12:02:27 by antofern          #+#    #+#             */
-/*   Updated: 2024/08/26 12:55:07 by antofern         ###   ########.fr       */
+/*   Updated: 2024/08/27 09:52:04 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ring.h"
+#include "../headers/ring.h"
 
 /* Alloca espacio para un struct t_ring y para el bufer contenido en el.
 La capacidad maxima del array será el parametro size.

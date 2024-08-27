@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ring_get_level.c                                   :+:      :+:    :+:   */
+/*   ring_reverse_rotate.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antofern <antofern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/26 12:56:45 by antofern          #+#    #+#             */
-/*   Updated: 2024/08/27 09:42:49 by antofern         ###   ########.fr       */
+/*   Created: 2024/08/27 10:06:15 by antofern          #+#    #+#             */
+/*   Updated: 2024/08/27 10:06:31 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/ring.h"
+#include "../headers/libft.h"
 
-/*retorna el valor contenido en el nºesimo elemento de la lista, considerando que el nº0 es ring->buff[ring->head]*/
-int ring_get_level(const t_ring *ring, t_level level) 
+int	ring_reverse_rotate(t_ring *ring)
 {
-	int index;
-
-	if (level >= ring->fill || level <= -(ring->fill))
-		return (0);
-	if (level < 0) {
-		level = ring->fill + level;
-	}
+	if (ring->fill < 2)
+		return (ERROR);
+	ring->head = ring_prev_index(ring->head, ring->slots);
+	ring->buff[ring->head] = ring_get_tail(ring);//ring->buff[ring->tail];
 	
-	index = (level + ring->head) % ring->slots ;
-
-	return (ring->buff[index]);
+	ring->tail = ring_prev_index(ring->tail, ring->slots);
+	return (OK);
 }

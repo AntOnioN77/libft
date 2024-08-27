@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ring_get_level.c                                   :+:      :+:    :+:   */
+/*   ring_find_value.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antofern <antofern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/26 12:56:45 by antofern          #+#    #+#             */
-/*   Updated: 2024/08/27 09:42:49 by antofern         ###   ########.fr       */
+/*   Created: 2024/08/27 10:30:10 by antofern          #+#    #+#             */
+/*   Updated: 2024/08/27 10:30:29 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/ring.h"
 
-/*retorna el valor contenido en el nºesimo elemento de la lista, considerando que el nº0 es ring->buff[ring->head]*/
-int ring_get_level(const t_ring *ring, t_level level) 
+/* Encuentra el camino mas corto al valor.
+si el valor buscado está cerca del head dará un valor positivo, si esta cerca del tail dará
+un valor negativo */
+t_level ring_find_value(t_ring *ring, int value)
 {
-	int index;
-
-	if (level >= ring->fill || level <= -(ring->fill))
+	t_level i;
+	i = 0;
+	while (i < ring->fill && ring_get_level(ring, i) != value)
+		i++;
+	if (ring_get_level(ring, i) != value)
 		return (0);
-	if (level < 0) {
-		level = ring->fill + level;
-	}
-	
-	index = (level + ring->head) % ring->slots ;
-
-	return (ring->buff[index]);
+	if ((ring->fill / 2) > i)
+		return (i);
+	else
+		return (-(ring->fill - i));
 }

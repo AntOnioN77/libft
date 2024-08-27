@@ -10,12 +10,19 @@ src/ft_substr.c src/ft_strjoin.c src/ft_split.c src/ft_itoa.c\
 src/ft_putnbr_fd.c src/ft_putendl_fd.c src/ft_putchar_fd.c\
 src/ft_putstr_fd.c src/ft_strmapi.c src/ft_striteri.c src/ft_strtrim.c\
 src/ft_strcmp.c src/ft_atol.c
-
 OBJECTS =$(subst .c,.o,$(SOURCES))
-BONUSSRC = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c\
-ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c 
+BONUSSRC = src/ft_lstnew.c src/ft_lstadd_front.c src/ft_lstsize.c\
+src/ft_lstlast.c src/ft_lstadd_back.c src/ft_lstdelone.c src/ft_lstclear.c\
+src/ft_lstiter.c src/ft_lstmap.c 
 BONUSOBJ = $(subst .c,.o,$(BONUSSRC))
-EXTRASRC = $(ring_array/ring_free.c ring_array/ring_init.c)
+EXTRASRC = ring_array/ring_free.c ring_array/ring_init.c\
+ring_array/ring_next_index.c ring_array/ring_prev_index.c\
+ring_array/ring_get_head.c\ ring_array/ring_get_tail.c\
+ring_array/ring_pop_head.c ring_array/ring_add_head.c\
+ring_array/ring_rotate.c ring_array/ring_reverse_rotate.c\
+ring_array/ring_swap.c ring_array/ring_push.c ring_array/ring_find_bigest.c\
+ring_array/ring_find_smallest.c ring_array/ring_find_value.c
+
 EXTRAOBJ = $(substr .c,.o,$(EXTRASRC))
 FLAGS = -Wall -Wextra -Werror
 $(NAME): $(OBJECTS)

@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ring_get_level.c                                   :+:      :+:    :+:   */
+/*   ring_get_head.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antofern <antofern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/26 12:56:45 by antofern          #+#    #+#             */
-/*   Updated: 2024/08/27 09:42:49 by antofern         ###   ########.fr       */
+/*   Created: 2024/08/26 13:43:29 by antofern          #+#    #+#             */
+/*   Updated: 2024/08/26 13:44:13 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/ring.h"
 
-/*retorna el valor contenido en el nºesimo elemento de la lista, considerando que el nº0 es ring->buff[ring->head]*/
-int ring_get_level(const t_ring *ring, t_level level) 
+/*Retorna el valor contenido en el primer elemento del array*/
+int ring_get_head(t_ring *ring)
 {
-	int index;
-
-	if (level >= ring->fill || level <= -(ring->fill))
-		return (0);
-	if (level < 0) {
-		level = ring->fill + level;
-	}
-	
-	index = (level + ring->head) % ring->slots ;
-
-	return (ring->buff[index]);
+	if (ring->fill == 0)
+			return (0);
+	return (ring->buff[ring->head]);
 }

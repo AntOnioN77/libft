@@ -19,6 +19,8 @@
 typedef int bool;
 #define FALSE 0
 #define TRUE 1
+#define ERROR 1
+#define OK 0
 typedef struct s_list
 {
 	void			*content;

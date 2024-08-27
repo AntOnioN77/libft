@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ring_get_level.c                                   :+:      :+:    :+:   */
+/*   ring_find_bigest.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antofern <antofern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/26 12:56:45 by antofern          #+#    #+#             */
-/*   Updated: 2024/08/27 09:42:49 by antofern         ###   ########.fr       */
+/*   Created: 2024/08/27 10:13:49 by antofern          #+#    #+#             */
+/*   Updated: 2024/08/27 10:16:58 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/ring.h"
+#include <limits.h>
 
-/*retorna el valor contenido en el nºesimo elemento de la lista, considerando que el nº0 es ring->buff[ring->head]*/
-int ring_get_level(const t_ring *ring, t_level level) 
+
+/*Busca el valor mas alto contenido en el anillo*/
+int ring_find_bigest(t_ring *ring)
 {
-	int index;
+	int i;
+	int result;
 
-	if (level >= ring->fill || level <= -(ring->fill))
-		return (0);
-	if (level < 0) {
-		level = ring->fill + level;
+	i = 0;
+	result = INT_MIN;
+	while (i < ring->fill)
+	{
+		if (ring_get_level(ring, i) > result)
+			result = ring_get_level(ring, i);
+		i++;
 	}
-	
-	index = (level + ring->head) % ring->slots ;
-
-	return (ring->buff[index]);
+	return (result);
 }

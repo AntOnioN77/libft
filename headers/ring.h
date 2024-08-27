@@ -2,6 +2,8 @@
 #define RING_H
 
 #include <stddef.h>
+#define EMPTY_STACK -1
+#define FULL_STACK -2
 
 typedef int t_level;
 typedef struct s_ring
@@ -28,7 +30,10 @@ int		ring_push(t_ring *from, t_ring *to);
 void	ring_free(t_ring *arr);
 int		ring_index_get_level(t_ring *arr, int index);
 int		ring_get_level(const t_ring *arr, t_level level);
-int		ring_find_smalest(t_ring *stack);
+int		ring_find_smallest(t_ring *stack);
 int		ring_find_bigest(t_ring *ring);
+int		ring_find_smallest(t_ring *stack);
+t_level ring_find_value(t_ring *ring, int value);
+
 
 #endif

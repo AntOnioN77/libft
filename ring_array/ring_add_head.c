@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ring_get_level.c                                   :+:      :+:    :+:   */
+/*   ring_add_head.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antofern <antofern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/26 12:56:45 by antofern          #+#    #+#             */
-/*   Updated: 2024/08/27 09:42:49 by antofern         ###   ########.fr       */
+/*   Created: 2024/08/27 09:41:40 by antofern          #+#    #+#             */
+/*   Updated: 2024/08/27 10:19:32 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/ring.h"
+#include "../headers/libft.h"
 
-/*retorna el valor contenido en el nºesimo elemento de la lista, considerando que el nº0 es ring->buff[ring->head]*/
-int ring_get_level(const t_ring *ring, t_level level) 
+int ring_add_head(t_ring *ring, int new_element)
 {
-	int index;
-
-	if (level >= ring->fill || level <= -(ring->fill))
-		return (0);
-	if (level < 0) {
-		level = ring->fill + level;
-	}
-	
-	index = (level + ring->head) % ring->slots ;
-
-	return (ring->buff[index]);
+	if (ring->fill >= ring->max_fill)
+		return (FULL_STACK);
+	ring->head = ring_prev_index(ring->head, ring->slots);
+	ring->fill++;
+	ring->buff[ring->head] = new_element;
+	return (OK);
 }
