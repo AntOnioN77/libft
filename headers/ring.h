@@ -17,8 +17,8 @@ typedef struct s_ring
 }	t_ring;
 
 t_ring	*ring_init(int size);
-int		ring_next_index(int index, int slots);
-int		ring_prev_index(int index, int slots);
+int	ring_next_index(int index, int slots);
+int	ring_prev_index(int index, int slots);
 int	 	ring_get_head(t_ring *stack);
 int		ring_get_tail(t_ring *stack);
 int		ring_pop_head(t_ring *arr);
