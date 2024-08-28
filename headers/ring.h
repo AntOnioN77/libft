@@ -35,6 +35,6 @@ int		ring_find_smallest(t_ring *stack);
 int		ring_find_bigest(t_ring *ring);
 int		ring_find_smallest(t_ring *stack);
 t_level ring_find_value(t_ring *ring, int value);
-
+bool	ring_has_duplicates(t_ring *a);
 
 #endif
