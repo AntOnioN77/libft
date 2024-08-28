@@ -2,6 +2,7 @@
 #define RING_H
 
 #include <stddef.h>
+#include "libft.h"
 #define EMPTY_STACK -1
 #define FULL_STACK -2
 

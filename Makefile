@@ -16,14 +16,15 @@ src/ft_putunbr_base.c
 BONUSSRC = src/ft_lstnew.c src/ft_lstadd_front.c src/ft_lstsize.c\
 src/ft_lstlast.c src/ft_lstadd_back.c src/ft_lstdelone.c src/ft_lstclear.c\
 src/ft_lstiter.c src/ft_lstmap.c 
-EXTRASRC = ring_array/ring_next_index.c ring_array/ring_prev_index.c\
+EXTRASRC =ring_array/ring_next_index.c ring_array/ring_prev_index.c\
 ring_array/ring_free.c ring_array/ring_init.c\
 ring_array/ring_get_head.c ring_array/ring_get_tail.c\
 ring_array/ring_pop_head.c ring_array/ring_add_head.c\
 ring_array/ring_rotate.c ring_array/ring_reverse_rotate.c\
 ring_array/ring_swap.c ring_array/ring_push.c ring_array/ring_find_bigest.c\
 ring_array/ring_find_smallest.c ring_array/ring_find_value.c\
-ring_array/ring_get_level.c ring_array/ring_index_get_level.c
+ring_array/ring_get_level.c ring_array/ring_index_get_level.c\
+parsing/ft_has_duplicates.c
 
 OBJECTS = $(SOURCES:.c=.o)
 BONUSOBJ = $(BONUSSRC:.c=.o)
@@ -32,17 +33,15 @@ EXTRAOBJ = $(EXTRASRC:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJECTS) $(HEADERS)
-	ar rc $(NAME) $(OBJECTS)
-	ranlib $(NAME)
+	ar rcs $(NAME) $(OBJECTS)
 
-extra: HEADERS += headers/ring.h
+
+extra: HEADERS += headers/ring.h headers/parsing.h
 extra: $(OBJECTS) $(BONUSOBJ) $(EXTRAOBJ)
-	ar rc $(NAME) $(OBJECTS) $(BONUSOBJ) $(EXTRAOBJ)
-	ranlib $(NAME)
+	ar rcs $(NAME) $(OBJECTS) $(BONUSOBJ) $(EXTRAOBJ)
 
 bonus: $(OBJECTS) $(BONUSOBJ)
-	ar rc $(NAME) $(OBJECTS) $(BONUSOBJ)
-	ranlib $(NAME)
+	ar rcs $(NAME) $(OBJECTS) $(BONUSOBJ)
 
 %.o: %.c $(HEADERS)
 	$(CC) $(FLAGS) -c $< -o $@
