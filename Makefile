@@ -25,7 +25,7 @@ ring_array/ring_swap.c ring_array/ring_push.c ring_array/ring_find_bigest.c\
 ring_array/ring_find_smallest.c ring_array/ring_find_value.c\
 ring_array/ring_get_level.c ring_array/ring_index_get_level.c\
 ring_array/ring_has_duplicates.c\
-parsing/ft_has_duplicates.c
+parsing/ft_has_duplicates.c parsing/ft_is_in_bounds_int.c
 
 OBJECTS = $(SOURCES:.c=.o)
 BONUSOBJ = $(BONUSSRC:.c=.o)
