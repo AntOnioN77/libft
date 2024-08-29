@@ -6,31 +6,36 @@
 /*   By: antofern <antofern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 13:12:40 by antofern          #+#    #+#             */
-/*   Updated: 2024/08/29 13:15:09 by antofern         ###   ########.fr       */
+/*   Updated: 2024/08/29 13:46:48 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/libft.h"
 #include <limits.h>
 
-/*Receives a pointer to the first numeric character of a string <char *digits>,
-and TRUE or FALSE if it has or not has a sign preceding this character.
+/*Receives a pointer to the first character of a string <char *digits>,
+with or within an unique simbol (+-).
 Returns TRUE if the number can be represented as an int type.*/
-bool	ft_is_in_bounds_int(char *digits, bool has_sign)
+bool	ft_is_in_bounds_int(char *num)
 {
 	long	unbr;
 	size_t	i;
+	bool	sign;
 
 	i = 0;
-	while (ft_isdigit(digits[i]))
+	sign = FALSE;
+	if (num[0] == '-' || num[0] == '+' )
+	{
+		sign = TRUE;
 		i++;
-	if (i < 1 || (i) != ft_strlen(digits))
+	}
+	while (ft_isdigit(num[i]))
+		i++;
+	if ((i - sign) < 1 || i != ft_strlen(num))
 		return (FALSE);
-	if (ft_strlen(digits) > 10)
+	if (ft_strlen(num) > (10 + sign))
 		return (FALSE);
-	if (has_sign)
-		digits--;
-	unbr = ft_atol(digits);
+	unbr = ft_atol(num);
 	if (unbr > INT_MAX || unbr < INT_MIN)
 		return (FALSE);
 	return (TRUE);
