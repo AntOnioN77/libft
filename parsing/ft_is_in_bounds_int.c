@@ -6,7 +6,7 @@
 /*   By: antofern <antofern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 13:12:40 by antofern          #+#    #+#             */
-/*   Updated: 2024/08/29 13:46:48 by antofern         ###   ########.fr       */
+/*   Updated: 2024/09/02 13:14:41 by antofern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ bool	ft_is_in_bounds_int(char *num)
 		i++;
 	if ((i - sign) < 1 || i != ft_strlen(num))
 		return (FALSE);
-	if (ft_strlen(num) > (10 + sign))
+	if (ft_strlen(num) > (size_t)(10 + sign))
 		return (FALSE);
 	unbr = ft_atol(num);
 	if (unbr > INT_MAX || unbr < INT_MIN)
